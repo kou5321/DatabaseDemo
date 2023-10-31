@@ -14,10 +14,8 @@ public class JdbcUtil {
 
     private static final String URL = "jdbc:postgresql://ep-royal-block-60540290.us-east-2.aws.neon.tech/database-demo?user=kouyixiao86&password=PHrA15zgadGL";
 //    private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
-
-    private static final String USERNAME = "kouyixiao86";
-
-    private static final String PASSWORD = "PHrA15zgadGL";
+//    private static final String USERNAME = "kouyixiao86";
+//    private static final String PASSWORD = "PHrA15zgadGL";
 
 
     public static Connection getConnection() {
