@@ -28,7 +28,9 @@ public class SampleDao {
                 ResultSet resultSet = statement.executeQuery(sql);
         ) {
             while (resultSet.next()) {
-                String name = resultSet.getString();
+                String name = resultSet.getString("NAME");
+                int age = resultSet.getInt("AGE");
+                sampleList.add(new Sample(name, age));
             }
         } catch (Exception e) {
 
