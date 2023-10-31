@@ -75,12 +75,34 @@ public class SampleDao {
         return null;
     }
 
-    public List<Sample> insertSample() {
-        return null;
+    public void insertSample(String name, int age) {
+        String sql = "INSERT INTO sample (NAME, AGE) VALUES (?, ?)";
+        try (
+                Connection connection = JdbcUtil.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setString(1, name);
+            statement.setInt(2, age);
+                statement.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public List<Sample> insertSampleBatch(List<Sample> samples) {
-        return null;
+    public void insertSampleBatch(List<Sample> samples) {
+        String sql = "INSERT INTO sample (NAME, AGE) VALUES (?, ?)";
+        try (
+                Connection connection = JdbcUtil.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            for (Sample sample : samples) {
+                statement.setString(1, sample.getName());
+                statement.setInt(2, sample.getAge());
+                statement.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public List<Sample> getAll() {
