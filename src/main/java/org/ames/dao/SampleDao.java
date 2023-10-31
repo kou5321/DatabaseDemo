@@ -18,6 +18,18 @@ public class SampleDao {
         return null;
     }
 
+    public List<Sample> getSamplesOverAge(int age) {
+        return null;
+    }
+
+    public List<Sample> insertSample() {
+        return null;
+    }
+
+    public List<Sample> insertSampleBatch(List<Sample> samples) {
+        return null;
+    }
+
     public List<Sample> getAll() {
         List<Sample> sampleList = new ArrayList<>();
         String sql = "select * from sample";
